@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Welcome, <%= name %>!</h1>
+  <ul>
+    <% items.forEach(function(item){ %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+
+  <form id="f">
+    <input name="msg" id="msg" placeholder="Type something"/>
+    <button>Send</button>
+  </form>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
