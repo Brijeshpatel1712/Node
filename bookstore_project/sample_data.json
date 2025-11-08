@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "isbn": "9780735211292",
+    "publishedDate": "2018-10-16",
+    "pages": 320,
+    "genre": "Self-help"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "publishedDate": "2008-08-01",
+    "pages": 464,
+    "genre": "Programming"
+  }
+]
