@@ -8,9 +8,9 @@ app.use(express.json());
 app.get('/users', async (req, res) => {
   try {
     const users = await User.find();
-    res.status.json(users);
+    res.status(users);
   } catch (err) {
-    res.status.json({ message: 'Error fetching users' });
+    res.status('Error fetching users');
   }
 });
 
@@ -19,9 +19,9 @@ app.post('/users', async (req, res) => {
     const { name, email, age } = req.body;
     const user = new User({ name, email, age });
     await user.save();
-    res.status.json({ message: 'User created', user });
+    res.status('User created', user );
   } catch (err) {
-    res.status.json({ message: 'Error creating user' });
+    res.status( 'Error creating user' );
   }
 });
 
@@ -29,9 +29,9 @@ app.delete('/users/:id', async (req, res) => {
   try {
     const { id } = req.params;
     await User.findByIdAndDelete(id);
-    res.status.json({ message: 'User deleted' });
+    res.status('User deleted');
   } catch (err) {
-    res.status.json({ message: 'Error deleting user' });
+    res.status('Error deleting user');
   }
 });
 
