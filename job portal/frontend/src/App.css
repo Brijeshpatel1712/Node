@@ -1,0 +1,185 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+/* =========================
+   COMMON CONTAINER
+========================= */
+.box {
+  width: 420px;
+  max-width: 95%;
+  margin: 70px auto;
+  padding: 30px 25px 35px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+.box h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+button.back {
+  background: linear-gradient(135deg, #6b7280, #374151);
+}
+
+button.logout {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+/* =========================
+   JOB LIST BUTTONS
+========================= */
+.job-btn {
+  background: #f1f5ff;
+  color: #1e40af;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 10px;
+}
+
+.job-btn:hover {
+  background: #e0e7ff;
+}
+
+/* =========================
+   COMPANY CARD
+========================= */
+.company-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.company-card p {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* =========================
+   DASHBOARD BUTTON GROUP
+========================= */
+.dashboard-buttons button {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .box {
+    margin: 40px auto;
+    padding: 25px 20px;
+  }
+
+  .box h2 {
+    font-size: 22px;
+  }
+}
+/* =========================
+   SWITCH TEXT (REGISTER / LOGIN)
+========================= */
+.switch-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.switch-text span {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch-text span:hover {
+  text-decoration: underline;
+}
