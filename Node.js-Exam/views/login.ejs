@@ -1,0 +1,30 @@
+<%- include('layout/navbar', { user: error ? null : {} }) %>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Login to Taskly</h2>
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <form action="/auth/login" method="POST">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Login</button>
+                    </form>
+                    <p style="margin-top: 20px; text-align: center; font-size: 14px;">
+                        Don't have an account? <a href="/auth/register">Register</a>
+                    </p>
+        </div>
+    </div>
+
+    </body>
+
+    </html>

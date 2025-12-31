@@ -1,0 +1,77 @@
+<%- include('layout/navbar', { user: user }) %>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h1>
+                        <%= user.role==='admin' ? 'All User Tasks' : 'My Tasks' %>
+                    </h1>
+                    <p style="color: var(--text-muted)">Welcome back, <%= user.username %> (<%= user.role %>)</p>
+                </div>
+                <a href="/tasks/add" class="btn-primary">New Task</a>
+            </div>
+
+            <div class="task-grid">
+                <% tasks.forEach(task=> { %>
+                    <div class="task-card">
+                        <span class="task-badge badge-<%= task.status %>">
+                            <%= task.status.replace('-', ' ' ) %>
+                        </span>
+                        <h3>
+                            <%= task.title %>
+                        </h3>
+                        <p style="color: var(--text-muted); font-size: 14px; margin-top: 10px;">
+                            <%= task.description %>
+                        </p>
+                        <p style="font-size: 12px; font-weight: 500; margin-top: 10px;">
+                            Category: <%= task.category ? task.category.name : 'Uncategorized' %>
+                        </p>
+                        <% if (user.role==='admin' ) { %>
+                            <div class="task-user">
+                                Assigned to: <strong>
+                                    <%= task.user.username %>
+                                </strong>
+                            </div>
+                            <% } %>
+                                <div class="task-actions">
+                                    <a href="/tasks/edit/<%= task._id %>" class="edit-link">Edit</a>
+                                    <a href="/tasks/delete/<%= task._id %>" class="delete-link"
+                                        onclick="return confirm('Delete this task?')">Delete</a>
+                                </div>
+                    </div>
+                    <% }) %>
+            </div>
+
+            <% if (tasks.length===0) { %>
+                <div style="text-align: center; padding: 100px 0;">
+                    <p style="color: var(--text-muted)">No tasks found. Start by creating one!</p>
+                </div>
+                <% } %>
+
+                    <% if (user.role==='admin' ) { %>
+                        <div class="admin-section">
+                            <h2>Manage Categories</h2>
+                            <form action="/tasks/categories" method="POST"
+                                style="margin-top: 20px; display: flex; gap: 10px; max-width: 400px;">
+                                <input type="text" name="name" class="form-control" placeholder="Category Name"
+                                    required>
+                                <button type="submit" class="btn-primary">Add</button>
+                            </form>
+
+                            <div style="margin-top: 20px;">
+                                <% categories.forEach(cat=> { %>
+                                    <span
+                                        style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 13px; margin-right: 10px;">
+                                        <%= cat.name %>
+                                    </span>
+                                    <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
+        </div>
+    </div>
+
+    </body>
+
+    </html>
